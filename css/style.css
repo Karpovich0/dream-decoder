@@ -948,6 +948,61 @@ h1.title {
   opacity: 0.8;
 }
 
+.text {
+  padding-top: 140px;
+  margin-bottom: 60px;
+}
+
+.text .title {
+  margin-bottom: 40px;
+  letter-spacing: normal;
+}
+
+.paragraph {
+  margin-bottom: 20px;
+  color: #cacad4;
+  font-family: inherit;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.47;
+}
+
+.paragraph strong {
+  font-weight: 700;
+}
+
+.list {
+  padding-left: 20px;
+}
+
+.list li {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+  font-family: inherit;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #4f76f6;
+}
+
 .body--lock {
   overflow: hidden;
 }

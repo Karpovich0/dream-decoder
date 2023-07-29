@@ -666,5 +666,48 @@ h1.title {
         }
     }
 }
+.text {
+    padding-top: 140px;
+    margin-bottom: 60px;
+    .title {
+        margin-bottom: 40px;
+        letter-spacing: normal;
+    }
+}
+
+.paragraph {
+    margin-bottom: 20px;
+    color: #cacad4;
+    font-family: inherit;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.47;
+    strong {
+        font-weight: 700;
+    }
+}
+.list {
+    padding-left: 20px;
+    li {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        // color: #CACAD4;
+        font-family: inherit;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+        &::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4f76f6;
+        }
+    }
+}
 @import "header";
 @import "popup";
