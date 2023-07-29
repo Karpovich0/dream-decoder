@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dream Decoder</title>
+		<!-- drop default styles -->
+		<link rel="stylesheet" href="./css/normalize.min.css" />
+		<link rel="stylesheet" href="./css/drop-default-styles.min.css" />
+		<!-- fonts -->
+		<link rel="stylesheet" href="./font/montserrat.css" />
+		<!-- main styles -->
+		<link rel="stylesheet" href="./css/style.css" />
+		<!-- swiper -->
+		<link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+	</head>
+	<body class="body">
+		<div class="container">
+			<header class="header">
+				<nav class="nav header__container container">
+					<a href="./index.html" class="header__logo"
+						><img src="./src/logo.svg" alt="dream decoder" class="logo" width="252" height="34"
+					/></a>
+					<div class="menu">
+						<button type="button" class="menu__icon">
+							<span class="menu__icon-span"></span>
+							<span class="visually-hidden">Menu</span>
+						</button>
+						<div class="menu__body">
+							<ul class="nav__list menu__list">
+								<li class="nav__item menu__item">
+									<a class="menu__link" data-goto=".intro" href="./index.html">Home</a>
+								</li>
+								<li class="nav__item menu__item">
+									<a class="menu__link" data-goto=".subscribe" href="">Subscription</a>
+								</li>
+								<li class="nav__item menu__item">
+									<a class="menu__link" data-goto=".how" href="">How it works</a>
+								</li>
+								<li class="nav__item menu__item">
+									<a class="menu__link" data-goto=".featured" href="">Featured in</a>
+								</li>
+								<li class="nav__item menu__item">
+									<a class="menu__link" data-goto=".faq" href="">FAQ</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+		</div>
+		<main class="main"></main>
+
+		<div class="footer">
+			<div class="footer__inner container">
+				<section class="get">
+					<h2 class="title">Get Exclusive Dream Insights in Your Inbox</h2>
+					<form action="" class="footer__form form">
+						<div class="form__row">
+							<input type="text" name="name" placeholder="Name" />
+							<input type="email" name="email" placeholder="E-mail" />
+						</div>
+						<button type="submit" class="button">Subscription</button>
+					</form>
+				</section>
+				<footer class="footer-nav">
+					<nav class="nav">
+						<a href=""
+							><img src="./src/logo.svg" alt="dream decoder" class="logo" width="252" height="34"
+						/></a>
+						<ul class="nav__list">
+							<li class="nav__item"><a href="" data-goto=".intro" class="menu__link">Home</a></li>
+							<li class="nav__item">
+								<a href="" data-goto=".subscribe" class="menu__link">Subscription</a>
+							</li>
+							<li class="nav__item"><a href="" data-goto=".how" class="menu__link">How it works</a></li>
+							<li class="nav__item">
+								<a href="" data-goto=".featured" class="menu__link">Featured in</a>
+							</li>
+							<li class="nav__item"><a href="" data-goto=".faq" class="menu__link">FAQ</a></li>
+						</ul>
+					</nav>
+				</footer>
+			</div>
+		</div>
+		<div class="popup-wrapper">
+			<section class="popup">
+				<div class="popup__inner">
+					<h2 class="title">Your Feedback Matters</h2>
+					<form action="" class="form">
+						<input type="text" placeholder="Name" />
+						<input type="email" placeholder="E-mail" />
+						<textarea name="" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
+						<button type="submit" class="button">Send</button>
+					</form>
+				</div>
+				<button type="button" class="popup__close">
+					<img src="./src/popup-close.svg" width="43" height="43" alt="" />
+				</button>
+			</section>
+		</div>
+	</body>
+	<script src="./js/header.js"></script>
+</html>

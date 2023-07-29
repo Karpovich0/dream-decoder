@@ -1,4 +1,5 @@
 $main-blue: #191b2f;
+$width-mobile: 359px;
 $width-mobile-start: 425px;
 $width-mobile-large: 576px;
 $width-tablet: 768px;
@@ -9,8 +10,12 @@ $width-pc: 1200px;
 }
 html {
     height: 100%;
+    position: relative;
 }
 body {
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    grid-template-columns: 1fr;
     font-family: "Montserrat", sans-serif;
     background: $main-blue;
     background-position: center 100%;
@@ -19,6 +24,10 @@ body {
     // background-repeat: no-repeat;
     color: white;
     // url("../src/bg.jpg")
+}
+textarea,
+input {
+    color: #fff !important;
 }
 .container {
     margin: 0 auto;
@@ -53,6 +62,11 @@ body {
         gap: 35px;
         height: 100%;
         align-items: center;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
         @media (max-width: $width-pc) {
             gap: 25px;
         }
@@ -72,7 +86,7 @@ body {
     overflow: hidden;
     &__inner {
         position: relative;
-        padding-top: 140px;
+        padding-top: 194px;
         display: flex;
         gap: 40px;
         @media (max-width: $width-tablet) {
@@ -92,8 +106,8 @@ body {
     }
     &__window {
         position: absolute;
-        top: 35px;
-        right: -300px;
+        top: 90px;
+        right: -265px;
         @media (max-width: $width-pc) {
             display: none;
         }
@@ -153,6 +167,7 @@ body {
     }
     @media (max-width: $width-tablet) {
         text-align: center;
+        font-size: 28px;
     }
 }
 h1.title {
@@ -177,6 +192,10 @@ h1.title {
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1.26px;
+    transition: opacity 0.2s ease;
+    &:hover {
+        opacity: 0.8;
+    }
     @media (max-width: $width-pc) {
         max-width: 225px;
         height: 55px;
@@ -236,16 +255,43 @@ h1.title {
 }
 .featured {
     margin-top: 261px;
-    &__list {
-        display: flex;
-        gap: 65px;
+    .swiper-div {
+        position: relative;
     }
-    // @media (max-width: $width-pc) {
-    //     display: none;
-    // }
+
+    li {
+        display: flex;
+        justify-content: center;
+    }
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: #d9d9d9;
+        transition: width 0.2s ease;
+    }
+    .swiper-pagination-bullet-active {
+        width: 35px;
+        height: 10px;
+        border-radius: 90px;
+        background: #4f76f6;
+    }
+    .swiper-pagination {
+        bottom: -69px !important;
+    }
+    &__row {
+        margin-top: 100px;
+        margin-bottom: 90px;
+        width: 100%;
+    }
+    &__girl {
+        margin: 0 auto;
+    }
 }
 
 .faq {
+    .title {
+        margin-bottom: 38px;
+    }
     &__list {
         position: relative;
         &::before,
@@ -328,9 +374,9 @@ h1.title {
     }
 
     &__article {
-        padding: 24px 0;
+        padding: 21px 0;
         @media (max-width: $width-pc) {
-            padding: 20px 0;
+            padding: 18px 0;
         }
     }
 
@@ -340,6 +386,7 @@ h1.title {
         gap: 30px;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
         @media (max-width: $width-pc) {
             margin-bottom: 5px;
         }
@@ -391,7 +438,10 @@ h1.title {
 }
 
 .join {
-    margin-top: 90px;
+    margin-top: 80px;
+    .title {
+        margin-bottom: 50px;
+    }
     &__list-wrapper {
         display: flex;
         justify-content: center;
@@ -401,7 +451,13 @@ h1.title {
         gap: 30px;
         a {
             filter: drop-shadow(0px 0px 8px rgba(79, 118, 246, 0.5));
+            transition: opacity 0.2s ease;
+            &:hover {
+                opacity: 0.8;
+            }
         }
+    }
+    .title {
     }
     @media (max-width: $width-pc) {
         img {
@@ -413,6 +469,7 @@ h1.title {
 
 .footer {
     max-width: 1920px;
+    width: 100%;
     margin: 0 auto;
 
     background: url("./../src/footer.svg");
@@ -430,7 +487,7 @@ h1.title {
 .get {
     margin-top: 219px;
     .title {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         color: #fff;
         font-size: 35px;
         font-style: normal;
@@ -565,6 +622,11 @@ h1.title {
     &__copy-button {
         background: transparent;
         border: none;
+        transition: opacity 0.2s ease;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
     }
 
     &__footer {
@@ -596,6 +658,13 @@ h1.title {
     &__list {
         display: flex;
         gap: 20px;
+        a {
+            transition: opacity 0.2s ease;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
     }
 }
 @import "header";
+@import "popup";

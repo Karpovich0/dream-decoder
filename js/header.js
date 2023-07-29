@@ -37,7 +37,7 @@ if (menuLinks.length > 0) {
 			}
 
 			window.scrollTo({
-				top: gotoBlockValue,
+				top: gotoBlockValue - 20,
 				behavior: "smooth",
 			});
 			e.preventDefault();

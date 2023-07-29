@@ -12,11 +12,13 @@
 		<link rel="stylesheet" href="./font/montserrat.css" />
 		<!-- main styles -->
 		<link rel="stylesheet" href="./css/style.css" />
+		<!-- swiper -->
+		<link rel="stylesheet" href="./css/swiper-bundle.min.css" />
 	</head>
 	<body class="body">
 		<div class="container">
 			<header class="header">
-				<nav class="nav header__container">
+				<nav class="nav header__container container">
 					<a href="" class="header__logo"
 						><img src="./src/logo.svg" alt="dream decoder" class="logo" width="252" height="34"
 					/></a>
@@ -48,267 +50,293 @@
 				</nav>
 			</header>
 		</div>
-		<section class="intro">
-			<div class="intro__inner container">
-				<div class="intro__col">
-					<h1 class="title">Unlock the Mystery of Your Mind</h1>
-					<form action="" class="intro__form">
-						<textarea
-							name="dream"
-							id="dream"
-							cols="30"
-							rows="10"
-							class="intro__textarea"
-							placeholder="Enter as much detail about your dream as you can remember... "
-						></textarea>
-						<button type="submit" class="button">Decode Dream</button>
-					</form>
+		<!-- END header -->
+		<main class="main">
+			<section class="intro">
+				<div class="intro__inner container">
+					<div class="intro__col">
+						<h1 class="title">Unlock the Mystery of Your Mind</h1>
+						<form action="" class="intro__form">
+							<textarea
+								name="dream"
+								id="dream"
+								cols="30"
+								rows="10"
+								class="intro__textarea"
+								placeholder="Enter as much detail about your dream as you can remember... "
+							></textarea>
+							<button type="submit" class="button">Decode Dream</button>
+						</form>
+					</div>
+					<img src="./src/girl.svg" width="419" height="460" alt="Sleeping girl" class="intro__girl" />
+					<img src="./src/window.svg" alt="Night window" class="intro__window" width="262" height="236" />
 				</div>
-				<img src="./src/girl.svg" width="419" height="460" alt="Sleeping girl" class="intro__girl" />
-				<img src="./src/window.svg" alt="Night window" class="intro__window" width="262" height="236" />
-			</div>
-		</section>
-		<!-- END intro -->
-		<section class="subscribe container">
-			<h2 class="title title--centred">While we're decoding your dream, why not subscribe to our newsletter?</h2>
-			<p>Get the latest insights directly to your inbox.</p>
-			<form action="" class="form">
-				<div class="form__row">
-					<input type="text" name="name" id="name" placeholder="Name" />
-					<input type="email" name="email" id="email" placeholder="E-mail" />
+			</section>
+			<!-- END intro -->
+			<section class="subscribe container">
+				<h2 class="title title--centred">
+					While we're decoding your dream, why not subscribe to our newsletter?
+				</h2>
+				<p>Get the latest insights directly to your inbox.</p>
+				<form action="" class="form">
+					<div class="form__row">
+						<input type="text" name="name" id="name" placeholder="Name" />
+						<input type="email" name="email" id="email" placeholder="E-mail" />
+					</div>
+					<button type="submit" class="button">Subscription</button>
+				</form>
+			</section>
+			<!-- END subscribe -->
+			<section class="decoded container">
+				<h2 class="title">Your Dream Decoded</h2>
+				<div class="decoded__article-wrapper">
+					<article class="decoded__content">
+						<p>
+							<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> Aenean commodo
+							ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+							montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+							quis, sem. Nulla consequat massa quis enim.
+						</p>
+						<p>
+							Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
+							ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
+							tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+							Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+							dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
+							laoreet.
+						</p>
+						<p>
+							<strong>
+								Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
+								ultricies nisi. Nam eget dui.
+							</strong>
+						</p>
+					</article>
+					<div class="decoded__button-wrapper">
+						<button class="decoded__copy-button">
+							<img src="./src/copy.svg" alt="Copy dream's text" width="28" height="30" />
+						</button>
+					</div>
 				</div>
-				<button type="submit" class="button">Subscription</button>
-			</form>
-		</section>
-		<!-- END subscribe -->
-		<section class="decoded container">
-			<h2 class="title">Your Dream Decoded</h2>
-			<div class="decoded__article-wrapper">
-				<article class="decoded__content">
-					<p>
-						<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> Aenean commodo ligula
-						eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-						ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-						consequat massa quis enim.
-					</p>
-					<p>
-						Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-						imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
-						tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean
-						leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
-						viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
-					</p>
-					<p>
-						<strong>
-							Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
-							ultricies nisi. Nam eget dui.
-						</strong>
-					</p>
-				</article>
-				<div class="decoded__button-wrapper">
-					<button class="decoded__copy-button">
-						<img src="./src/copy.svg" alt="Copy dream's text" width="28" height="30" />
-					</button>
+				<div class="decoded__footer">
+					<button type="button" class="button button-feedback">Leave Feedback</button>
+					<div class="decoded__send">
+						<strong>Send:</strong>
+						<ul class="decoded__list">
+							<li>
+								<a href=""><img src="./src/decoded/facebook.svg" alt="" width="40" height="40" /></a>
+							</li>
+							<li>
+								<a href=""><img src="./src/decoded/twitter.svg" alt="" width="40" height="40" /></a>
+							</li>
+							<li>
+								<a href=""><img src="./src/decoded/mail.svg" alt="" width="40" height="40" /></a>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="decoded__footer">
-				<button type="button" class="button">Leave Feedback</button>
-				<div class="decoded__send">
-					<strong>Send:</strong>
-					<ul class="decoded__list">
-						<li>
-							<a href=""><img src="./src/decoded/facebook.svg" alt="" width="40" height="40" /></a>
+			</section>
+			<!-- END decoded -->
+			<section class="how">
+				<h2 class="title title--centred">How It Works</h2>
+				<div class="how__list-wrapper">
+					<ul class="how__list">
+						<li class="how__item">
+							<img src="./src/how/1.svg" alt="" width="135" height="125" />
+							<h3>Describe Your dream</h3>
 						</li>
-						<li>
-							<a href=""><img src="./src/decoded/twitter.svg" alt="" width="40" height="40" /></a>
+						<li class="how__item">
+							<img src="./src/how/2.svg" alt="" width="135" height="125" />
+							<h3>Click decode dream</h3>
 						</li>
-						<li>
-							<a href=""><img src="./src/decoded/mail.svg" alt="" width="40" height="40" /></a>
+						<li class="how__item">
+							<img src="./src/how/3.svg" alt="" width="135" height="125" />
+							<h3>Receive your interpretation</h3>
 						</li>
 					</ul>
 				</div>
-			</div>
-		</section>
-		<!-- END decoded -->
-		<section class="how">
-			<h2 class="title title--centred">How It Works</h2>
-			<div class="how__list-wrapper">
-				<ul class="how__list">
-					<li class="how__item">
-						<img src="./src/how/1.svg" alt="" width="135" height="125" />
-						<h3>Describe Your dream</h3>
+			</section>
+			<!-- END how -->
+			<section class="featured container">
+				<h2 class="title title--centred">Featured In</h2>
+				<div class="swiper-div">
+					<div class="swiper">
+						<ul class="featured__list swiper-wrapper">
+							<li class="featured__item swiper-slide">
+								<a href=""><img src="./src/featured/1.svg" alt="BARVA" width="217" height="187" /></a>
+							</li>
+							<li class="featured__item swiper-slide">
+								<a href=""><img src="./src/featured/2.svg" alt="FRANKOF" width="217" height="187" /></a>
+							</li>
+							<li class="featured__item swiper-slide">
+								<a href=""><img src="./src/featured/3.svg" alt="DecArt" width="217" height="187" /></a>
+							</li>
+							<li class="featured__item swiper-slide">
+								<a href=""><img src="./src/featured/4.svg" alt="Wuk" width="217" height="187" /></a>
+							</li>
+							<li class="featured__item swiper-slide">
+								<a href=""><img src="./src/featured/4.svg" alt="Wuk" width="217" height="187" /></a>
+							</li>
+							<li class="featured__item swiper-slide">
+								<a href=""><img src="./src/featured/4.svg" alt="Wuk" width="217" height="187" /></a>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<div class="featured__row">
+					<img
+						class="featured__girl"
+						src="./src/sleeping-girl.svg"
+						width="692"
+						height="200"
+						alt="sleeping girl"
+					/>
+				</div>
+			</section>
+			<!-- END featured -->
+			<section class="faq container">
+				<h2 class="title title--centred">FAQ</h2>
+				<ul class="faq__list">
+					<li class="faq__item">
+						<article class="faq__article">
+							<div class="faq__header">
+								<h3>Why are there many dream books with different interpretations?</h3>
+								<button type="button">
+									<svg
+										width="16"
+										height="9"
+										viewBox="0 0 16 9"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
+										/>
+									</svg>
+									<span class="visually-hidden">Toggle article</span>
+								</button>
+							</div>
+							<div class="faq__content">
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+								dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+								nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+								sem. Nulla consequat massa quis enim.
+							</div>
+						</article>
 					</li>
-					<li class="how__item">
-						<img src="./src/how/2.svg" alt="" width="135" height="125" />
-						<h3>Click decode dream</h3>
+					<li class="faq__item">
+						<article class="faq__article">
+							<div class="faq__header">
+								<h3>How to choose the right dream book?</h3>
+								<button type="button">
+									<svg
+										width="16"
+										height="9"
+										viewBox="0 0 16 9"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
+										/>
+									</svg>
+									<span class="visually-hidden">Toggle article</span>
+								</button>
+							</div>
+							<div class="faq__content">
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+								dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+								nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+								sem. Nulla consequat massa quis enim.
+							</div>
+						</article>
 					</li>
-					<li class="how__item">
-						<img src="./src/how/3.svg" alt="" width="135" height="125" />
-						<h3>Receive your interpretation</h3>
+					<li class="faq__item faq__item--active">
+						<article class="faq__article">
+							<div class="faq__header">
+								<h3>Why are there many dream books with different interpretations?</h3>
+								<button type="button">
+									<svg
+										width="16"
+										height="9"
+										viewBox="0 0 16 9"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
+										/>
+									</svg>
+									<span class="visually-hidden">Toggle article</span>
+								</button>
+							</div>
+							<div class="faq__content">
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+								dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+								nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+								sem. Nulla consequat massa quis enim.
+							</div>
+						</article>
+					</li>
+					<li class="faq__item">
+						<article class="faq__article">
+							<div class="faq__header">
+								<h3>Why are there many dream books with different interpretations?</h3>
+								<button type="button">
+									<svg
+										width="16"
+										height="9"
+										viewBox="0 0 16 9"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
+										/>
+									</svg>
+									<span class="visually-hidden">Toggle article</span>
+								</button>
+							</div>
+							<div class="faq__content">
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+								dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+								nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+								sem. Nulla consequat massa quis enim.
+							</div>
+						</article>
+					</li>
+					<li class="faq__item">
+						<article class="faq__article">
+							<div class="faq__header">
+								<h3>What to pay attention to in a dream?</h3>
+								<button type="button">
+									<svg
+										width="16"
+										height="9"
+										viewBox="0 0 16 9"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
+										/>
+									</svg>
+									<span class="visually-hidden">Toggle article</span>
+								</button>
+							</div>
+							<div class="faq__content">
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+								dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+								nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+								sem. Nulla consequat massa quis enim.
+							</div>
+						</article>
 					</li>
 				</ul>
-			</div>
-		</section>
-		<!-- END how -->
-		<section class="featured container">
-			<h2 class="title title--centred">Featured In</h2>
-			<ul class="featured__list">
-				<li class="featured__item">
-					<a href=""><img src="./src/featured/1.svg" alt="BARVA" width="217" height="187" /></a>
-				</li>
-				<li class="featured__item">
-					<a href=""><img src="./src/featured/2.svg" alt="FRANKOF" width="217" height="187" /></a>
-				</li>
-				<li class="featured__item">
-					<a href=""><img src="./src/featured/3.svg" alt="DecArt" width="217" height="187" /></a>
-				</li>
-				<li class="featured__item">
-					<a href=""><img src="./src/featured/4.svg" alt="Wuk" width="217" height="187" /></a>
-				</li>
-			</ul>
-		</section>
-		<!-- END featured -->
-		<section class="faq container">
-			<h2 class="title title--centred">FAQ</h2>
-			<ul class="faq__list">
-				<li class="faq__item">
-					<article class="faq__article">
-						<div class="faq__header">
-							<h3>Why are there many dream books with different interpretations?</h3>
-							<button type="button">
-								<svg
-									width="16"
-									height="9"
-									viewBox="0 0 16 9"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
-									/>
-								</svg>
-								<span class="visually-hidden">Toggle article</span>
-							</button>
-						</div>
-						<div class="faq__content">
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-							consequat massa quis enim.
-						</div>
-					</article>
-				</li>
-				<li class="faq__item">
-					<article class="faq__article">
-						<div class="faq__header">
-							<h3>How to choose the right dream book?</h3>
-							<button type="button">
-								<svg
-									width="16"
-									height="9"
-									viewBox="0 0 16 9"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
-									/>
-								</svg>
-								<span class="visually-hidden">Toggle article</span>
-							</button>
-						</div>
-						<div class="faq__content">
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-							consequat massa quis enim.
-						</div>
-					</article>
-				</li>
-				<li class="faq__item faq__item--active">
-					<article class="faq__article">
-						<div class="faq__header">
-							<h3>Why are there many dream books with different interpretations?</h3>
-							<button type="button">
-								<svg
-									width="16"
-									height="9"
-									viewBox="0 0 16 9"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
-									/>
-								</svg>
-								<span class="visually-hidden">Toggle article</span>
-							</button>
-						</div>
-						<div class="faq__content">
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-							consequat massa quis enim.
-						</div>
-					</article>
-				</li>
-				<li class="faq__item">
-					<article class="faq__article">
-						<div class="faq__header">
-							<h3>Why are there many dream books with different interpretations?</h3>
-							<button type="button">
-								<svg
-									width="16"
-									height="9"
-									viewBox="0 0 16 9"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
-									/>
-								</svg>
-								<span class="visually-hidden">Toggle article</span>
-							</button>
-						</div>
-						<div class="faq__content">
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-							consequat massa quis enim.
-						</div>
-					</article>
-				</li>
-				<li class="faq__item">
-					<article class="faq__article">
-						<div class="faq__header">
-							<h3>What to pay attention to in a dream?</h3>
-							<button type="button">
-								<svg
-									width="16"
-									height="9"
-									viewBox="0 0 16 9"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M7.29289 0.421555C7.68342 0.0310311 8.31658 0.0310311 8.70711 0.421555L15.0711 6.78552C15.4616 7.17604 15.4616 7.80921 15.0711 8.19973C14.6805 8.59025 14.0474 8.59025 13.6569 8.19973L8 2.54288L2.34315 8.19973C1.95262 8.59025 1.31946 8.59025 0.928932 8.19973C0.538408 7.80921 0.538408 7.17604 0.928932 6.78552L7.29289 0.421555ZM7 3.12866V1.12866H9V3.12866H7Z"
-									/>
-								</svg>
-								<span class="visually-hidden">Toggle article</span>
-							</button>
-						</div>
-						<div class="faq__content">
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-							consequat massa quis enim.
-						</div>
-					</article>
-				</li>
-			</ul>
-		</section>
-		<!-- END faq -->
+			</section>
+			<!-- END faq -->
+		</main>
 		<div class="footer">
 			<section class="join container">
 				<h2 class="title title--centred">Join Our Community</h2>
@@ -348,17 +376,41 @@
 							><img src="./src/logo.svg" alt="dream decoder" class="logo" width="252" height="34"
 						/></a>
 						<ul class="nav__list">
-							<li class="nav__item"><a href="">Home</a></li>
-							<li class="nav__item"><a href="">Subscription</a></li>
-							<li class="nav__item"><a href="">How it works</a></li>
-							<li class="nav__item"><a href="">Featured in</a></li>
-							<li class="nav__item"><a href="">FAQ</a></li>
+							<li class="nav__item"><a href="" data-goto=".intro" class="menu__link">Home</a></li>
+							<li class="nav__item">
+								<a href="" data-goto=".subscribe" class="menu__link">Subscription</a>
+							</li>
+							<li class="nav__item"><a href="" data-goto=".how" class="menu__link">How it works</a></li>
+							<li class="nav__item">
+								<a href="" data-goto=".featured" class="menu__link">Featured in</a>
+							</li>
+							<li class="nav__item"><a href="" data-goto=".faq" class="menu__link">FAQ</a></li>
 						</ul>
 					</nav>
 				</footer>
 			</div>
 		</div>
+		<div class="popup-wrapper">
+			<section class="popup">
+				<div class="popup__inner">
+					<h2 class="title">Your Feedback Matters</h2>
+					<form action="" class="form">
+						<input type="text" placeholder="Name" />
+						<input type="email" placeholder="E-mail" />
+						<textarea name="" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
+						<button type="submit" class="button">Send</button>
+					</form>
+				</div>
+				<button type="button" class="popup__close">
+					<img src="./src/popup-close.svg" width="43" height="43" alt="" />
+				</button>
+			</section>
+		</div>
 	</body>
 	<script src="./js/header.js"></script>
+	<sctip src="./js/feadback.js"></sctip>
 	<script src="./js/faq.js"></script>
+	<script src="./js/swiper-bundle.min.js"></script>
+	<script src="./js/swiper.js"></script>
+	<script src="./js/popup.js"></script>
 </html>

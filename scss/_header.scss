@@ -6,13 +6,13 @@
 }
 
 .header {
-    padding-top: 20px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 2000;
     background-color: #191b2f;
+    border-bottom: 1px solid red;
     &__container {
         margin: 0 auto;
         display: flex;
@@ -20,8 +20,6 @@
         align-items: center;
         min-height: 70px;
         width: 100%;
-        max-width: 1200px;
-        padding: 0 25px;
     }
     &__logo {
         position: relative;
@@ -100,7 +98,7 @@
                 width: 100%;
                 top: 0;
                 left: 0;
-                height: 90px;
+                height: 70px;
                 background-color: blueviolet;
                 z-index: 2200;
                 opacity: 0.5;
