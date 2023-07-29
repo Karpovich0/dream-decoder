@@ -34,6 +34,8 @@ input {
     padding: 0 40px;
     width: 100%;
     max-width: 1200px;
+    @media (max-width: $width-pc) {
+    }
     @media (max-width: $width-tablet-large) {
         padding: 0 30px;
     }
