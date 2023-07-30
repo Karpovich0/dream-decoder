@@ -1,6 +1,7 @@
 import checkFieldsValidity from "./check-validity.js";
 import makeRequest from "./makeRequest.js";
 
+const successIcon = document.querySelector(".success");
 const subscribeButton1 = document.querySelector("#subcribeButton1");
 const subscribeButton2 = document.querySelector("#subcribeButton2");
 const feedbackButton = document.querySelector("#buttonFeedback");
@@ -16,8 +17,9 @@ subscribeButtonArray.forEach((element) => {
 		proccessInputs(e, form, isRequestArray);
 
 		if (isRequestArray[0] && isRequestArray[1]) {
-			console.log("let's go");
 			makeRequest(e, form);
+			toggleSuccess();
+			setTimeout(toggleSuccess, 500);
 		}
 	});
 });
@@ -41,6 +43,8 @@ feedbackButton.addEventListener("click", function (e) {
 	if (isRequestArray[0] && isRequestArray[1] && isRequestArray[2]) {
 		makeRequest(e, form);
 		togglePopup();
+		toggleSuccess();
+		setTimeout(toggleSuccess, 1000);
 	}
 });
 
@@ -58,4 +62,8 @@ function proccessInputs(e, form, isRequestArray) {
 			isRequestArray[index] = true;
 		}
 	});
+}
+
+function toggleSuccess() {
+	successIcon.classList.toggle("success--show");
 }

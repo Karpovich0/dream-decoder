@@ -1,6 +1,7 @@
 import checkFieldsValidity from "./check-validity.js";
 import makeRequest from "./makeRequest.js";
 
+const subscribe = document.querySelector(".subscribe");
 const decodeForm = document.querySelector("#decodeForm");
 const decodeButton = document.querySelector("#decodeButton");
 const decodedSection = document.querySelector(".decoded");
@@ -15,6 +16,8 @@ decodeButton.addEventListener("click", function (e) {
 		e.preventDefault();
 		return;
 	}
+	subscribe.classList.add("subscribe--active");
+	scrollTo(subscribe);
 	makeRequest(e, decodeForm, actionSuccess, disableDecodeButton, responseData);
 });
 
@@ -28,7 +31,7 @@ function actionSuccess() {
 	disableDecodeButton();
 	pasteResponse();
 	decodedSection.classList.add("decoded--show");
-	scrollToDecoded();
+	scrollTo(decodedSection);
 }
 
 function pasteResponse() {
@@ -63,8 +66,7 @@ function pasteResponse() {
 	decodedArticle.insertAdjacentHTML("afterbegin", response);
 }
 
-function scrollToDecoded() {
-	const gotoBlock = document.querySelector(".decoded");
+function scrollTo(gotoBlock) {
 	const gotoBlockValue =
 		gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector(".header").offsetHeight;
 	window.scrollTo({

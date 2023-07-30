@@ -12,7 +12,6 @@
     width: 100%;
     z-index: 2000;
     background-color: #191b2f;
-    border-bottom: 1px solid red;
     &__container {
         margin: 0 auto;
         display: flex;
@@ -20,6 +19,7 @@
         align-items: center;
         min-height: 70px;
         width: 100%;
+        border-bottom: 1px solid rgba(#fff, 0.2);
     }
     &__logo {
         position: relative;
