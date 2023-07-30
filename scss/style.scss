@@ -12,18 +12,19 @@ html {
     height: 100%;
     position: relative;
 }
-body {
+.body {
     display: grid;
     grid-template-rows: 1fr max-content;
     grid-template-columns: 1fr;
     font-family: "Montserrat", sans-serif;
-    background: $main-blue;
-    background-position: center 100%;
+    background: url("./../src/background.jpg"), $main-blue;
+    background-position: center 0;
     background-size: cover;
     height: 100%;
-    // background-repeat: no-repeat;
     color: white;
-    // url("../src/bg.jpg")
+    &--text {
+        background: url("./../src/background-text.jpg"), $main-blue;
+    }
 }
 textarea,
 input {
@@ -91,9 +92,12 @@ input {
         padding-top: 194px;
         display: flex;
         gap: 40px;
+        @media (max-width: $width-pc) {
+            padding-top: 150px;
+        }
         @media (max-width: $width-tablet) {
             padding-top: 0;
-            margin-top: 140px;
+            margin-top: 120px;
         }
     }
     &__col {
@@ -137,6 +141,11 @@ input {
     h1 {
         max-width: 682px;
     }
+    &__form {
+        @media (max-width: $width-tablet) {
+            padding-bottom: 50px;
+        }
+    }
     &__textarea {
         padding: 15px 20px;
         margin-bottom: 35px;
@@ -150,6 +159,11 @@ input {
         position: relative;
         z-index: 2;
     }
+    .button {
+        @media (max-width: $width-tablet) {
+            margin: 0 auto;
+        }
+    }
 }
 .title {
     margin-bottom: 38px;
@@ -160,6 +174,12 @@ input {
     &--centred {
         margin-bottom: 30px;
         text-align: center;
+        @media (max-width: $width-tablet-large) {
+            margin-bottom: 25px;
+        }
+        @media (max-width: $width-tablet) {
+            margin-bottom: 20px;
+        }
     }
     @media (max-width: $width-pc) {
         font-size: 42px;
@@ -169,13 +189,17 @@ input {
     }
     @media (max-width: $width-tablet) {
         text-align: center;
-        font-size: 28px;
+        font-size: 32px;
+    }
+    @media (max-width: $width-mobile-large) {
+        font-size: 30px;
     }
 }
 h1.title {
     letter-spacing: 2.5px;
 }
 .button {
+    position: relative;
     display: block;
     max-width: 255px;
     width: 100%;
@@ -195,6 +219,8 @@ h1.title {
     line-height: normal;
     letter-spacing: 1.26px;
     transition: opacity 0.2s ease;
+    overflow: hidden;
+
     &:hover {
         opacity: 0.8;
     }
@@ -206,6 +232,12 @@ h1.title {
 }
 .how {
     margin-top: 105px;
+    @media (max-width: $width-tablet-large) {
+        margin-top: 95px;
+    }
+    @media (max-width: $width-tablet) {
+        margin-top: 80px;
+    }
     &__list-wrapper {
         display: flex;
         justify-content: center;
@@ -225,10 +257,37 @@ h1.title {
         }
     }
     &__item {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 19px;
+        // animation
+        transition: transform 3s linear;
+        animation-name: scales;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-delay: 0;
+        animation-direction: alternate;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 29%;
+            left: 72%;
+            width: 100%;
+            height: 10px;
+            background: url("./../src/how-dots.svg");
+            background-repeat: no-repeat;
+        }
+        &:last-child::after {
+            content: none;
+        }
+        @media (max-width: $width-tablet) {
+            &::after {
+                content: none;
+            }
+        }
     }
     h3 {
         text-align: center;
@@ -257,6 +316,15 @@ h1.title {
 }
 .featured {
     margin-top: 261px;
+    @media (max-width: $width-pc) {
+        margin-top: 200px;
+    }
+    @media (max-width: $width-tablet-large) {
+        margin-top: 180px;
+    }
+    @media (max-width: $width-tablet) {
+        margin-top: 140px;
+    }
     .swiper-div {
         position: relative;
     }
@@ -264,6 +332,24 @@ h1.title {
     li {
         display: flex;
         justify-content: center;
+        width: 25% !important;
+
+        @media (max-width: 991px) {
+            width: 33.33% !important;
+        }
+        @media (max-width: 767px) {
+            width: 50% !important;
+        }
+
+        @media (max-width: 574px) {
+            width: 100% !important;
+        }
+        a {
+            transition: transform 0.2s ease;
+        }
+        a:hover {
+            transform: translateY(-5px);
+        }
     }
     .swiper-pagination-bullet {
         width: 10px;
@@ -284,6 +370,12 @@ h1.title {
         margin-top: 100px;
         margin-bottom: 90px;
         width: 100%;
+        @media (max-width: $width-tablet-large) {
+            margin-bottom: 70px;
+        }
+        @media (max-width: $width-tablet) {
+            margin-bottom: 40px;
+        }
     }
     &__girl {
         margin: 0 auto;
@@ -403,6 +495,9 @@ h1.title {
             @media (max-width: $width-pc) {
                 font-size: 18px;
             }
+            @media (max-width: $width-tablet) {
+                font-size: 17px;
+            }
         }
         button {
             display: block;
@@ -436,6 +531,12 @@ h1.title {
         font-style: normal;
         font-weight: 300;
         line-height: 25px; /* 147.059% */
+        @media (max-width: $width-pc) {
+            font-size: 16px;
+        }
+        @media (max-width: $width-tablet) {
+            font-size: 15px;
+        }
     }
 }
 
@@ -488,6 +589,16 @@ h1.title {
 
 .get {
     margin-top: 219px;
+    @media (max-width: $width-pc) {
+        margin-top: 150px;
+    }
+    @media (max-width: $width-tablet-large) {
+        margin-top: 120px;
+    }
+    @media (max-width: $width-tablet) {
+        margin-bottom: 40px;
+        margin-top: 100px;
+    }
     .title {
         margin-bottom: 40px;
         color: #fff;
@@ -507,9 +618,14 @@ h1.title {
         margin-bottom: 40px;
         display: flex;
         gap: 30px;
+        @media (max-width: $width-tablet-large) {
+            margin-bottom: 30px;
+        }
         @media (max-width: $width-tablet) {
+            margin-bottom: 20px;
             flex-direction: column;
             align-items: center;
+            gap: 20px;
         }
     }
     input {
@@ -553,6 +669,7 @@ h1.title {
         }
     }
     @media (max-width: $width-tablet) {
+        margin-bottom: 0;
         .nav {
             gap: 25px;
         }
@@ -567,6 +684,16 @@ h1.title {
 
 .subscribe {
     margin-top: 120px;
+    @media (max-width: $width-pc) {
+        margin-top: 90px;
+    }
+    @media (max-width: $width-tablet-large) {
+        margin-top: 70px;
+    }
+    @media (max-width: $width-tablet) {
+        margin-top: 50px;
+    }
+
     p {
         margin-bottom: 44px;
         color: #cacad4;
@@ -576,6 +703,14 @@ h1.title {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media (max-width: $width-tablet-large) {
+            margin-bottom: 35px;
+            font-size: 22px;
+        }
+        @media (max-width: $width-tablet) {
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
     }
     input {
         max-width: 445px;
@@ -591,10 +726,26 @@ h1.title {
             justify-content: center;
         }
     }
+    @media (max-width: $width-tablet-large) {
+        margin-top: 45px;
+    }
+    @media (max-width: $width-tablet) {
+        margin-top: 35px;
+    }
 }
 
 .decoded {
+    display: none;
     margin-top: 131px;
+    &--show {
+        display: block;
+    }
+    @media (max-width: $width-tablet-large) {
+        margin-top: 110px;
+    }
+    @media (max-width: $width-tablet) {
+        margin-top: 90px;
+    }
     &__article-wrapper {
         margin-bottom: 50px;
         padding: 23px 30px 30px;
@@ -606,14 +757,15 @@ h1.title {
         margin-bottom: 20px;
         padding-bottom: 22px;
         border-bottom: 1px solid rgba(#fff, 0.2);
+        // text
+        color: #cacad4;
+        font-family: inherit;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
         p {
             margin-bottom: 15px;
-            color: #cacad4;
-            font-family: inherit;
-            font-size: 17px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 25px;
         }
     }
     &__button-wrapper {
@@ -711,5 +863,8 @@ h1.title {
         }
     }
 }
+
 @import "header";
 @import "popup";
+@import "animation";
+@import "animation-how";

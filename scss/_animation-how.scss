@@ -1,0 +1,17 @@
+@keyframes scales {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@-webkit-keyframes scales {
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(1.08);
+    }
+}

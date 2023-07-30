@@ -56,7 +56,7 @@
 				<div class="intro__inner container">
 					<div class="intro__col">
 						<h1 class="title">Unlock the Mystery of Your Mind</h1>
-						<form action="" class="intro__form">
+						<form action="" class="intro__form" id="decodeForm">
 							<textarea
 								name="dream"
 								id="dream"
@@ -64,8 +64,15 @@
 								rows="10"
 								class="intro__textarea"
 								placeholder="Enter as much detail about your dream as you can remember... "
+								required
+								minlength="15"
 							></textarea>
-							<button type="submit" class="button">Decode Dream</button>
+							<button type="submit" id="decodeButton" class="button">
+								Decode Dream
+								<span class="load-wrapper">
+									<span class="load"></span>
+								</span>
+							</button>
 						</form>
 					</div>
 					<img src="./src/girl.svg" width="419" height="460" alt="Sleeping girl" class="intro__girl" />
@@ -73,45 +80,24 @@
 				</div>
 			</section>
 			<!-- END intro -->
-			<section class="subscribe container">
+			<section class="subscribe container" id="subscribe">
 				<h2 class="title title--centred">
 					While we're decoding your dream, why not subscribe to our newsletter?
 				</h2>
 				<p>Get the latest insights directly to your inbox.</p>
 				<form action="" class="form">
 					<div class="form__row">
-						<input type="text" name="name" id="name" placeholder="Name" />
-						<input type="email" name="email" id="email" placeholder="E-mail" />
+						<input type="text" name="name" id="name" placeholder="Name" required />
+						<input type="email" name="email" id="email" placeholder="E-mail" required />
 					</div>
-					<button type="submit" class="button">Subscription</button>
+					<button type="submit" class="button" id="subcribeButton">Subscription</button>
 				</form>
 			</section>
 			<!-- END subscribe -->
 			<section class="decoded container">
 				<h2 class="title">Your Dream Decoded</h2>
 				<div class="decoded__article-wrapper">
-					<article class="decoded__content">
-						<p>
-							<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> Aenean commodo
-							ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-							montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-							quis, sem. Nulla consequat massa quis enim.
-						</p>
-						<p>
-							Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
-							ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
-							tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-							Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-							dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
-							laoreet.
-						</p>
-						<p>
-							<strong>
-								Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
-								ultricies nisi. Nam eget dui.
-							</strong>
-						</p>
-					</article>
+					<article class="decoded__content"></article>
 					<div class="decoded__button-wrapper">
 						<button class="decoded__copy-button">
 							<img src="./src/copy.svg" alt="Copy dream's text" width="28" height="30" />
@@ -137,7 +123,7 @@
 				</div>
 			</section>
 			<!-- END decoded -->
-			<section class="how">
+			<section class="how" id="how">
 				<h2 class="title title--centred">How It Works</h2>
 				<div class="how__list-wrapper">
 					<ul class="how__list">
@@ -157,7 +143,7 @@
 				</div>
 			</section>
 			<!-- END how -->
-			<section class="featured container">
+			<section class="featured container" id="featured">
 				<h2 class="title title--centred">Featured In</h2>
 				<div class="swiper-div">
 					<div class="swiper">
@@ -195,7 +181,7 @@
 				</div>
 			</section>
 			<!-- END featured -->
-			<section class="faq container">
+			<section class="faq container" id="faq">
 				<h2 class="title title--centred">FAQ</h2>
 				<ul class="faq__list">
 					<li class="faq__item">
@@ -364,8 +350,8 @@
 					<h2 class="title">Get Exclusive Dream Insights in Your Inbox</h2>
 					<form action="" class="footer__form form">
 						<div class="form__row">
-							<input type="text" name="name" placeholder="Name" />
-							<input type="email" name="email" placeholder="E-mail" />
+							<input type="text" name="name" placeholder="Name" required />
+							<input type="email" name="email" placeholder="E-mail" required />
 						</div>
 						<button type="submit" class="button">Subscription</button>
 					</form>
@@ -395,9 +381,17 @@
 				<div class="popup__inner">
 					<h2 class="title">Your Feedback Matters</h2>
 					<form action="" class="form">
-						<input type="text" placeholder="Name" />
-						<input type="email" placeholder="E-mail" />
-						<textarea name="" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
+						<input type="text" placeholder="Name" required name="name" />
+						<input type="email" placeholder="E-mail" required name="email" />
+						<textarea
+							name="feadbackText"
+							id=""
+							cols="30"
+							rows="10"
+							placeholder="Feedback"
+							required
+							minlength="15"
+						></textarea>
 						<button type="submit" class="button">Send</button>
 					</form>
 				</div>
@@ -413,4 +407,6 @@
 	<script src="./js/swiper-bundle.min.js"></script>
 	<script src="./js/swiper.js"></script>
 	<script src="./js/popup.js"></script>
+	<!-- requests -->
+	<script src="./js/decode.js"></script>
 </html>
