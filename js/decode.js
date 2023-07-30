@@ -1,68 +1,38 @@
+import checkFieldsValidity from "./check-validity.js";
+import makeRequest from "./makeRequest.js";
+
 const decodeForm = document.querySelector("#decodeForm");
 const decodeButton = document.querySelector("#decodeButton");
 const decodedSection = document.querySelector(".decoded");
 const decodedArticle = document.querySelector(".decoded__content");
 
+let responseData = { data: "" };
+
+let responseText = "";
+
 decodeButton.addEventListener("click", function (e) {
-	makerequest(e, decodeForm);
-});
-
-function makerequest(e, form) {
-	e.preventDefault();
-
-	if (!checkFieldsValidity(form.querySelector("textarea"))) {
+	if (!checkFieldsValidity(decodeForm.querySelector("textarea"))) {
+		e.preventDefault();
 		return;
 	}
-
-	const formData = new FormData(form);
-
-	disableDecodeButton();
-
-	fetch("https://httpbin.org/post", {
-		method: "POST",
-		body: formData,
-	})
-		.then(function (response) {
-			return response.text();
-		})
-		.then(function (text) {
-			console.log(text);
-			disableDecodeButton();
-			decodedSection.classList.add("decoded--show");
-			pasteResponse();
-			scrollToDecoded();
-		})
-		.catch((err) => {
-			console.log(err);
-			disableDecodeButton();
-		});
-}
+	makeRequest(e, decodeForm, actionSuccess, disableDecodeButton, responseData);
+});
 
 function disableDecodeButton() {
 	decodeButton.disabled = !decodeButton.disabled;
 	decodeButton.classList.toggle("loading");
 }
 
-function checkFieldsValidity(input) {
-	if (input.value !== "") {
-		if (!input.validity.typeMismatch && !input.validity.tooShort) {
-			showValididyMessage(input);
-			return true;
-		} else {
-			showValididyMessage(input);
-			return false;
-		}
-	} else {
-		showValididyMessage(input);
-		return false;
-	}
+function actionSuccess() {
+	responseText = responseData.data.form.dream;
+	disableDecodeButton();
+	pasteResponse();
+	decodedSection.classList.add("decoded--show");
+	scrollToDecoded();
 }
 
-function showValididyMessage(input) {
-	input.reportValidity();
-}
-
-let response = `<div class="decoded__article-inner">
+function pasteResponse() {
+	let response = `<div class="decoded__article-inner">
 <p>
 	<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> Aenean
 	commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
@@ -83,10 +53,13 @@ let response = `<div class="decoded__article-inner">
 		ullamcorper ultricies nisi. Nam eget dui.
 	</strong>
 </p>
+<p>
+	<strong>
+	${responseText}
+	</strong>
+	</p>
 
 </div>`;
-
-function pasteResponse() {
 	decodedArticle.insertAdjacentHTML("afterbegin", response);
 }
 

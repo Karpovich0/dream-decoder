@@ -7,7 +7,6 @@ popupClose.addEventListener("click", () => {
 	togglePopup();
 });
 buttonFeedback.addEventListener("click", () => {
-	console.log("click");
 	togglePopup();
 });
 
