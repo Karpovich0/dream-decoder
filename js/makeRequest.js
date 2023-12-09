@@ -1,4 +1,4 @@
-export default function makeRequest(e, form, actionSuccess, disableDecodeButton, responseData) {
+export default function makeRequest(url, e, form, responseData, actionSuccess, disableDecodeButton) {
 	e.preventDefault();
 
 	const formData = new FormData(form);
@@ -7,7 +7,7 @@ export default function makeRequest(e, form, actionSuccess, disableDecodeButton,
 		disableDecodeButton();
 	}
 
-	fetch("https://httpbin.org/post", {
+	fetch(url, {
 		method: "POST",
 		body: formData,
 	})
@@ -15,7 +15,6 @@ export default function makeRequest(e, form, actionSuccess, disableDecodeButton,
 			return response.text();
 		})
 		.then(function (text) {
-			console.log(text);
 			if (responseData) {
 				responseData.data = JSON.parse(text);
 			}

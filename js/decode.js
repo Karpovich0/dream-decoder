@@ -6,6 +6,7 @@ const decodeForm = document.querySelector("#decodeForm");
 const decodeButton = document.querySelector("#decodeButton");
 const decodedSection = document.querySelector(".decoded");
 const decodedArticle = document.querySelector(".decoded__content");
+const url = "https://dreamdecoder.efrox.network/decode.php";
 
 let responseData = { data: "" };
 
@@ -18,7 +19,7 @@ decodeButton.addEventListener("click", function (e) {
 	}
 	subscribe.classList.add("subscribe--active");
 	scrollTo(subscribe);
-	makeRequest(e, decodeForm, actionSuccess, disableDecodeButton, responseData);
+	makeRequest(url, e, decodeForm, responseData, actionSuccess, disableDecodeButton);
 });
 
 function disableDecodeButton() {
@@ -27,7 +28,7 @@ function disableDecodeButton() {
 }
 
 function actionSuccess() {
-	responseText = responseData.data.form.dream;
+	responseText = responseData.data.text;
 	disableDecodeButton();
 	pasteResponse();
 	decodedSection.classList.add("decoded--show");
@@ -35,35 +36,11 @@ function actionSuccess() {
 }
 
 function pasteResponse() {
-	let response = `<div class="decoded__article-inner">
-<p>
-	<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> Aenean
-	commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-	parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-	eu, pretium quis, sem. Nulla consequat massa quis enim.
-</p>
-<p>
-	Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-	rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-	pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
-	vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
-	ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
-	viverra nulla ut metus varius laoreet.
-</p>
-<p>
-	<strong>
-		Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-		ullamcorper ultricies nisi. Nam eget dui.
-	</strong>
-</p>
-<p>
-	<strong>
-	${responseText}
-	</strong>
-	</p>
-
-</div>`;
-	decodedArticle.insertAdjacentHTML("afterbegin", response);
+	decodedArticle.innerHTML = "";
+	let result = "<p>" + responseText + "</p>";
+	result = result.replace(/\r\n\r\n/g, "</p><p>").replace(/\n\n/g, "</p><p>");
+	result = result.replace(/\r\n/g, "<br />").replace(/\n/g, "<br />");
+	decodedArticle.insertAdjacentHTML("afterbegin", result);
 }
 
 function scrollTo(gotoBlock) {
@@ -74,3 +51,11 @@ function scrollTo(gotoBlock) {
 		behavior: "smooth",
 	});
 }
+
+// copy to clipboad
+const copyButtonDecoded = document.querySelector(".decoded__copy-button");
+
+copyButtonDecoded.addEventListener("click", async function (event) {
+	const content = responseText;
+	await navigator.clipboard.writeText(content);
+});
